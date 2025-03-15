@@ -14,7 +14,7 @@ const Login = async () => {
   async function handleLogin(state: string | undefined, FormData: FormData) {
     "use server";
 
-    const email = FormData.get("email")?.toString().trim();
+    const email = FormData.get("email")?.toString().trim().toLowerCase();
     const password = FormData.get("password")?.toString().trim();
 
     if (!email) return "Email is required";

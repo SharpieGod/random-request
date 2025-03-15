@@ -21,6 +21,7 @@ const RegisterForm = ({
       >
         <h1 className="text-background-200 text-start text-3xl">Register</h1>
         <div className="flex flex-col gap-4">
+          <span className="text-lg text-red-400">{error}</span>
           <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col gap-1">
               <span>First Name</span>
@@ -67,7 +68,6 @@ const RegisterForm = ({
             Already have an account? <span className="underline">Login</span>
           </Link>
         </div>
-        <span className="text-red text-lg">{error}</span>
         <div className="flex items-center justify-end">
           <DarkoButton variant="secondary" type="submit">
             Create Account

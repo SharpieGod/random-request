@@ -41,9 +41,10 @@ model Key {
   keyType    KeyType
   numberType NumberType
 
-  lowerBound Int
-  upperBound Int
+  lowerBound Int @default(0)
+  upperBound Int @default(100)
 
-  userId String
-  user   User   @relation(fields: [userId], references: [id])
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
 }

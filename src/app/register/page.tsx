@@ -16,7 +16,7 @@ const Register = async () => {
   async function handleRegister(state: string | undefined, FormData: FormData) {
     "use server";
 
-    const email = FormData.get("email")?.toString().trim();
+    const email = FormData.get("email")?.toString().trim().toLowerCase();
     const password = FormData.get("password")?.toString().trim();
     const firstName = FormData.get("firstName")?.toString().trim();
     const lastName = FormData.get("lastName")?.toString().trim();

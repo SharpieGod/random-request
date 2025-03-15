@@ -14,11 +14,16 @@ const Navbar = async () => {
       </Link>
 
       <ul className="flex items-center justify-between gap-8">
+        <li>
+          <Link href={"/about"}>
+            <DarkoButton variant="ghost">About</DarkoButton>
+          </Link>
+        </li>
         {user ? (
           <>
             <li>
               <Link href={`/account`}>
-                <DarkoButton>Account</DarkoButton>
+                <DarkoButton>Manage Keys</DarkoButton>
               </Link>
             </li>
             <li>
