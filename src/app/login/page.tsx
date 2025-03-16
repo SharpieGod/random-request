@@ -47,7 +47,6 @@ const Login = async () => {
     <div>
       <Navbar />
       <LoginForm handleLogin={handleLogin} />
-      <Footer />
     </div>
   );
 };
