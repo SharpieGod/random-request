@@ -10,7 +10,7 @@ const Footer = async () => {
 
       <ul className="flex items-center justify-between gap-8">
         <li>
-          <span>© 2025 DAT. All Seats Reserved</span>
+          <span>© 2025 DAT. Some Seats Reserved</span>
         </li>
       </ul>
     </nav>
