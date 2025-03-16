@@ -1,7 +1,7 @@
-## Random.ly
+# Random.ly
 
 The best solution for generating random numbers with ease.
 
-# Demo URL
+## Demo URL
 
 [demo](https://randomly-app.vercel.app/login)
