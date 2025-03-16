@@ -2,6 +2,7 @@ import bcrypt from "bcryptjs";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import React from "react";
+import Footer from "~/components/Footer";
 import LoginForm from "~/components/LoginForm";
 import Navbar from "~/components/Navbar";
 import { getSession } from "~/server/auth";
@@ -46,6 +47,7 @@ const Login = async () => {
     <div>
       <Navbar />
       <LoginForm handleLogin={handleLogin} />
+      <Footer />
     </div>
   );
 };

@@ -108,16 +108,17 @@ const Demo = () => {
             placeholder="Select Number Type"
           />
         </div>
+        <div className="flex items-center justify-between gap-4 pr-4">
+          <DarkoButton
+            variant="ghost"
+            onClick={() => setResult(generateRandomNumber())}
+          >
+            Generate
+          </DarkoButton>
 
-        <DarkoButton
-          variant="ghost"
-          onClick={() => setResult(generateRandomNumber())}
-        >
-          Generate
-        </DarkoButton>
-
-        <div className="mt-4">
-          <span className="font-semibold">Result:</span> <span>{result}</span>
+          <div className="">
+            <span className="font-semibold">Result:</span> <span>{result}</span>
+          </div>
         </div>
       </div>
     </div>

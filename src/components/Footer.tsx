@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = async () => {
   return (
-    <nav className="border-text-800 bg-primary-900/40 sticky top-0 z-50 flex h-60 items-center justify-between border-b px-24 text-xl backdrop-blur-xl">
+    <nav className="border-text-800 bg-primary-600 sticky top-0 z-50 flex h-40 w-full items-center justify-between border-b px-24 text-xl backdrop-blur-xl">
       <Link className="text-2xl font-bold" href={"/"}>
         Random.ly
       </Link>

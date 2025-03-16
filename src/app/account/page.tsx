@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { type FC } from "react";
 import AccountView from "~/components/AccountView";
+import Footer from "~/components/Footer";
 import Navbar from "~/components/Navbar";
 import { getSession } from "~/server/auth";
 import { api } from "~/trpc/server";
