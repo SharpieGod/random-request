@@ -15,20 +15,28 @@ const Demo = () => {
   const [result, setResult] = React.useState<number | string>("0");
   // Generate random number logic
   const generateRandomNumber = () => {
-    if (numberType === "INTEGER") {
-      return (
-        Math.floor(Math.random() * (Number.MAX_SAFE_INTEGER * 2 + 1)) -
-        Number.MAX_SAFE_INTEGER
-      );
+    if (keyType === "RANGE") {
+      if (numberType === "INTEGER") {
+        return (
+          Math.floor(Math.random() * (upperBound - lowerBound + 1)) + lowerBound
+        );
+      } else {
+        return parseFloat(
+          (Math.random() * (upperBound - lowerBound) + lowerBound).toFixed(6),
+        );
+      }
     } else {
-      // For FLOAT, decide on a random magnitude and generate a number with that magnitude
-      const magnitude = Math.floor(Math.random() * 300) - 150; // Random magnitude between -150 and +150
-      const randomValue =
-        Math.random() * 10 ** magnitude * (Math.random() > 0.5 ? 1 : -1);
-      return randomValue;
+      if (numberType === "INTEGER") {
+        return (
+          Math.floor(Math.random() * (Number.MAX_SAFE_INTEGER * 2 + 1)) -
+          Number.MAX_SAFE_INTEGER
+        );
+      } else {
+        const magnitude = Math.floor(Math.random() * 300) - 150;
+        return Math.random() * 10 ** magnitude * (Math.random() > 0.5 ? 1 : -1);
+      }
     }
   };
-
   return (
     <div className="mx-auto flex w-3/5 flex-col gap-8">
       <div className="flex flex-col gap-4">
@@ -67,7 +75,7 @@ const Demo = () => {
                   setLowerBoundText(value);
                   setLowerBound(parseFloat(value));
                 }}
-                className="border-background-800 placeholder:text-text-200 focus:border-background-600 w-full rounded-lg border bg-transparent p-3 invalid:border-red-300 focus:outline-none"
+                className="w-full rounded-lg border border-background-800 bg-transparent p-3 placeholder:text-text-200 invalid:border-red-300 focus:border-background-600 focus:outline-none"
                 placeholder="Lower Bound"
               />
             </div>
@@ -81,7 +89,7 @@ const Demo = () => {
                   setUpperBoundText(value);
                   setUpperBound(parseFloat(value));
                 }}
-                className="border-background-800 placeholder:text-text-200 focus:border-background-600 w-full rounded-lg border bg-transparent p-3 invalid:border-red-300 focus:outline-none"
+                className="w-full rounded-lg border border-background-800 bg-transparent p-3 placeholder:text-text-200 invalid:border-red-300 focus:border-background-600 focus:outline-none"
                 placeholder="Upper Bound"
               />
             </div>
